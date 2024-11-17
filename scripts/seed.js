@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { db } = require('@vercel/postgres');
 const {
   invoices,
@@ -17,7 +19,7 @@ async function seedUsers(client) {
         name VARCHAR(255) NOT NULL,
         email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL
-      );
+      );  
     `;
 
     console.log(`Created "users" table`);
